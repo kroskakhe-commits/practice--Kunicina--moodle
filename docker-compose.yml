@@ -1,8 +1,8 @@
 services:
   db:
-      image: postgres:14
-      restart: always
-   environment:
+    image: postgres:14
+    restart: always
+    environment:
       POSTGRES_DB: moodle
       POSTGRES_USER: moodle
       POSTGRES_PASSWORD: MoodleDb!2026
@@ -10,7 +10,7 @@ services:
       - db_data:/var/lib/postgresql/data
 
   moodle:
-   image: bitnamilegacy/moodle:5.0.2
+    image: bitnamilegacy/moodle:5.0.2
     restart: always
     ports:
       - "8080:80"
@@ -20,7 +20,7 @@ services:
       MOODLE_DATABASE_PORT_NUMBER: 5432
       MOODLE_DATABASE_NAME: moodle
       MOODLE_DATABASE_USER: moodle
-      MOODLE_DATABASE_PASSWORD: moodlepass123
+      MOODLE_DATABASE_PASSWORD: MoodleDb!2026
       MOODLE_USERNAME: admin
       MOODLE_PASSWORD: AdminPass123!
       MOODLE_EMAIL: admin@example.com
@@ -29,7 +29,8 @@ services:
       - moodledata:/bitnami/moodledata
     depends_on:
       - db
-    volumes:
+
+volumes:
   db_data:
   moodle_data:
   moodledata:
