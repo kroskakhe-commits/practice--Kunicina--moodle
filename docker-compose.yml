@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_DB: moodle
+      POSTGRES_USER: moodle
+      POSTGRES_PASSWORD: moodlepass123
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  moodle:
+    image: bitnamilegacy/moodle:4.4
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      MOODLE_DATABASE_TYPE: pgsql
+      MOODLE_DATABASE_HOST: db
+      MOODLE_DATABASE_PORT_NUMBER: 5432
+      MOODLE_DATABASE_NAME: moodle
+      MOODLE_DATABASE_USER: moodle
+      MOODLE_DATABASE_PASSWORD: moodlepass123
+      MOODLE_USERNAME: admin
+      MOODLE_PASSWORD: AdminPass123!
+      MOODLE_EMAIL: admin@example.com
+    volumes:
+      - moodle_data:/bitnami/moodle
+      - moodledata:/bitnami/moodledata
+    depends_on:
+      - db
+    networks:
+      - moodle-network
+
+volumes:
+  db_data:
+  moodle_data:
+  moodledata:
+
+networks:
+  moodle-network:
+    driver: bridge
