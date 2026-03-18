@@ -1,0 +1,27 @@
+Дата и время запуска: 2026-03-18 
+Способ запуска: ручной 
+
+Использованная команда:
+docker exec -it practice--kunicina--moodle-moodle-1 /opt/bitnami/php/bin/php /opt/bitnami/moodle/admin/cli/cron.php
+
+Результат выполнения:
+
+Ran 0 adhoc tasks found at Wed, 18 Mar 2026 10:00:50 +0000
+Cron run completed correctly
+Cron completed at 10:00:50 in 0.052363 seconds. Memory used: 18.9 MB. Continuing to check for tasks for 180 more seconds.
+Ran 0 adhoc tasks found at Wed, 18 Mar 2026 10:00:51 +0000
+Cron run completed correctly
+Cron completed at 10:00:51 in 0.009121 seconds. Memory used: 19.3 MB. Continuing to check for tasks for 179 more seconds.
+Ran 0 adhoc tasks found at Wed, 18 Mar 2026 10:00:52 +0000
+Cron run completed correctly
+Cron completed at 10:00:52 in 0.009571 seconds. Memory used: 19.3 MB. Continuing to check for tasks for 178 more seconds.
+Ran 0 adhoc tasks found at Wed, 18 Mar 2026 10:00:53 +0000
+Cron run completed correctly
+Cron completed at 10:00:53 in 0.009187 seconds. Memory used: 19.3 MB. Continuing to check for tasks for 177 more seconds.
+Ran 0 adhoc tasks found at Wed, 18 Mar 2026 10:00:54 +0000
+Cron run completed correctly
+Cron completed at 10:00:54 in 0.010282 seconds. Memory used: 19.3 MB. Continuing to check for tasks for 176 more seconds.
+Ran 0 adhoc tasks found at Wed, 18 Mar 2026 10:00:55 +0000
+Cron run completed correctly
+
+Вывод: Cron успешно запущен вручную, фоновые задачи выполняются.
